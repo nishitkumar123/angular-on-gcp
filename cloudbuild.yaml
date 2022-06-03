@@ -7,5 +7,6 @@ steps:
 
   # Build production package
   - name: "gcr.io/cloud-builders/npm:latest"
-    args: [run, ng, "--", "build", "--prod"]
+    args: [ 'run', 'build', '--prod' ]
+    #args: [run, ng, "--", "build", "--prod"]
     dir: "angular-on-gcp"
