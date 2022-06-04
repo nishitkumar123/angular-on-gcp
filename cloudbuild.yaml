@@ -24,7 +24,7 @@ steps:
 
      "dist",
 
-     "la-test-angular-node-1:/var/",
+     "xyz:/var/",
 
      "--zone=us-central1-a",
 
