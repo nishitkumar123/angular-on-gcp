@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build:prod": "node --version",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
   "private": true,
