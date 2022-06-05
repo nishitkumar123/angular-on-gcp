@@ -1,13 +1,15 @@
 steps:
-- name: node
+
+# Install node packages
+- name: node:10.16.3
   entrypoint: npm
   args: ['install']
-- name: node
+
+# Build productive files
+- name: node:10.16.3
   entrypoint: npm
-  args: ['test']
-- name: node
-  entrypoint: npm
-  args: ['run','ng','build']
+  args: [ 'run', 'build', '--prod' ]
+  
 - name: "gcr.io/cloud-builders/gcloud"
   args:
 
