@@ -9,9 +9,8 @@ steps:
   args: ['install']
 
 # build Project in mode Prod.
--name: 'gcr.io/cloud-builders/npm'
- args: ['run','ng','--','build','--prod','--aot']
- 
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['run','ng','build','--prod','--aot']
 
 - name: "gcr.io/cloud-builders/gcloud"
   args:
