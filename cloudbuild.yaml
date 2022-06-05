@@ -1,16 +1,13 @@
 steps:
-# Install Angular
 - name: node
-  args: ['install','-g','@angular/cli' ]
-
-# Install Dependencies
-- name: node
+  entrypoint: npm
   args: ['install']
-
-# build Project in mode Prod.
 - name: node
-  args: ['run','ng','build','--prod','--aot']
-  
+  entrypoint: npm
+  args: ['test']
+- name: node
+  entrypoint: npm
+  args: ['run','ng','build']
 - name: "gcr.io/cloud-builders/gcloud"
   args:
 
