@@ -1,18 +1,18 @@
 steps:
-# Install Angular
-- name: 'gcr.io/cloud-builders/npm:node-10.10.0'
-  id: 'install'
-  args: ['install']
+ # install dependencies for angular app
+ - name: "gcr.io/cloud-builders/npm:current"
+   args: ["install"]
 
-- name: 'gcr.io/cloud-builders/npm:node-10.10.0'
-  args: ['run','ng','build','--prod']
 
-- name: 'gcr.io/cloud-builders/npm:node-10.10.0'
-  id: 'test'
-  args: ['run', 'test']
-  
-- name: "gcr.io/cloud-builders/gcloud"
-  args:
+ # build production ready frontend angular app
+ - name: "gcr.io/cloud-builders/npm:current"
+   args: [run, ng, "--", build, "--prod"]
+
+ # OPTIONALLY remove current/old files
+ # upload newly pushed files (for frontend)
+
+ - name: "gcr.io/cloud-builders/gcloud"
+   args:
 
     [
 
@@ -24,8 +24,9 @@ steps:
 
      "dist",
 
-     "xyz:/var/",
+     "la-test-angular-node-1:/var/",
 
      "--zone=us-central1-a",
 
    ]
+  
