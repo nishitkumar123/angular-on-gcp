@@ -1,18 +1,20 @@
+
 steps:
- # install dependencies for angular app
- - name: "gcr.io/cloud-builders/npm"
-   args: ["install"]
+# Install Angular
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['install','-g','@angular/cli' ]
 
+# Install Dependencies
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['install']
 
- # build production ready frontend angular app
- - name: "gcr.io/cloud-builders/npm"
-   args: [run, ng, "--", build, "--prod"]
+# build Project in mode Prod.
+-name: 'gcr.io/cloud-builders/npm'
+ args: ['run','ng','--','build','--prod','--aot']
+ 
 
- # OPTIONALLY remove current/old files
- # upload newly pushed files (for frontend)
-
- - name: "gcr.io/cloud-builders/gcloud"
-   args:
+- name: "gcr.io/cloud-builders/gcloud"
+  args:
 
     [
 
