@@ -5,8 +5,7 @@ steps:
   args: ['install']
 
 - name: 'gcr.io/cloud-builders/npm:node-10.10.0'
-  id: 'prod-build'
-  args: ['run', 'build-prod']
+  args: ['run','ng','build','--prod']
 
 - name: 'gcr.io/cloud-builders/npm:node-10.10.0'
   id: 'test'
