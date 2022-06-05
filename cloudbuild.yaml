@@ -10,7 +10,7 @@ steps:
 
 # build Project in mode Prod.
 - name: 'gcr.io/cloud-builders/npm'
-  args: ['run','ng','build','--prod','--aot']
+  args: ['run','ng','build','--dev','--aot']
 
 - name: "gcr.io/cloud-builders/gcloud"
   args:
