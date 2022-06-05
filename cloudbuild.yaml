@@ -6,8 +6,7 @@ steps:
 
  # build production ready frontend angular app
 # - name: "gcr.io/cloud-builders/npm:latest"
- - name: "gcr.io/cloud-builders-community/ng"
-   args: [run, ng, "--", build, "--prod"]
+    args: [run, ng, "--", build, "--prod"]
 
  # OPTIONALLY remove current/old files
  # upload newly pushed files (for frontend)
